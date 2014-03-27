@@ -49,7 +49,7 @@ public enum Kit {
             lore.add("Proporciona todo lo");
             lore.add("necesario para tu equipo");
             lore.add("con este kit y preparaos");
-            lore.add("para la batalla!")
+            lore.add("para la batalla!");
         }
     },
     WARRIOR(Material.STONE_SWORD) {
