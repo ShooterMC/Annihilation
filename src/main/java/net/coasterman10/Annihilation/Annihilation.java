@@ -194,8 +194,8 @@ public final class Annihilation extends JavaPlugin {
 
         sign.loadSigns();
 
-        sb.resetScoreboard(ChatColor.DARK_AQUA + "Voting" + ChatColor.WHITE
-                + " | " + ChatColor.GOLD + "/vote <name>");
+        sb.resetScoreboard(ChatColor.DARK_AQUA + "Votando" + ChatColor.WHITE
+                + " | " + ChatColor.GOLD + "/vote <mapa>");
 
         build = this.getConfig().getInt("build", 5);
         lastJoinPhase = this.getConfig().getInt("lastJoinPhase", 2);
@@ -355,7 +355,7 @@ public final class Annihilation extends JavaPlugin {
         for (OfflinePlayer score : sb.sb.getPlayers())
             sb.sb.resetScores(score);
 
-        sb.obj.setDisplayName(ChatColor.DARK_AQUA + "Map: "
+        sb.obj.setDisplayName(ChatColor.DARK_AQUA + "Mapa: "
                 + WordUtils.capitalize(voting.getWinner()));
 
         for (GameTeam t : GameTeam.teams()) {
@@ -371,7 +371,7 @@ public final class Annihilation extends JavaPlugin {
             sbt.setPrefix(t.color().toString());
         }
 
-        sb.obj.setDisplayName(ChatColor.DARK_AQUA + "Map: "
+        sb.obj.setDisplayName(ChatColor.DARK_AQUA + "Mapa: "
                 + WordUtils.capitalize(voting.getWinner()));
 
         for (Player p : getServer().getOnlinePlayers())
@@ -430,7 +430,7 @@ public final class Annihilation extends JavaPlugin {
             maps.selectMap(winner);
             getServer().broadcastMessage(
                     ChatColor.GREEN + WordUtils.capitalize(winner)
-                            + " was chosen!");
+                            + " fue elegido!");
             loadMap(winner);
 
             voting.end();
@@ -495,8 +495,8 @@ public final class Annihilation extends JavaPlugin {
     }
 
     public void reset() {
-        sb.resetScoreboard(ChatColor.DARK_AQUA + "Voting" + ChatColor.WHITE
-                + " | " + ChatColor.GOLD + "/vote <name>");
+        sb.resetScoreboard(ChatColor.DARK_AQUA + "Votando" + ChatColor.WHITE
+                + " | " + ChatColor.GOLD + "/vote <mapa>");
         maps.reset();
         timer.reset();
         PlayerMeta.reset();
@@ -504,7 +504,7 @@ public final class Annihilation extends JavaPlugin {
             PlayerMeta.getMeta(p).setTeam(GameTeam.NONE);
             p.teleport(maps.getLobbySpawnPoint());
             BarUtil.setMessageAndPercent(p, ChatColor.DARK_AQUA
-                    + "Welcome to Annihilation!", 0.01F);
+                    + "Bienvenido a HighLand Nexo!", 0.01F);
             p.setMaxHealth(20D);
             p.setHealth(20D);
             p.setFoodLevel(20);
@@ -543,7 +543,7 @@ public final class Annihilation extends JavaPlugin {
                     ItemStack selector = new ItemStack(Material.FEATHER);
                     ItemMeta itemMeta = selector.getItemMeta();
                     itemMeta.setDisplayName(ChatColor.AQUA
-                            + "Right click to select class");
+                            + "Click derecho para sleccionar una clase");
                     selector.setItemMeta(itemMeta);
 
                     p.getInventory().setItem(0, selector);
@@ -600,7 +600,7 @@ public final class Annihilation extends JavaPlugin {
 
     public void listTeams(CommandSender sender) {
         sender.sendMessage(ChatColor.GRAY + "============[ "
-                + ChatColor.DARK_AQUA + "Teams" + ChatColor.GRAY
+                + ChatColor.DARK_AQUA + "Equipos" + ChatColor.GRAY
                 + " ]============");
         for (GameTeam t : GameTeam.teams()) {
             int size = 0;
@@ -652,11 +652,11 @@ public final class Annihilation extends JavaPlugin {
         if (getPhase() > lastJoinPhase
                 && !player.hasPermission("annhilation.bypass.phaselimiter")) {
             player.kickPlayer(ChatColor.RED
-                    + "You cannot join the game in this phase!");
+                    + "No puedes unirte durante esta fase!");
             return;
         }
 
-        player.sendMessage(ChatColor.DARK_AQUA + "You joined "
+        player.sendMessage(ChatColor.DARK_AQUA + "Te has unido al equipo "
                 + target.coloredName());
         meta.setTeam(target);
 
