@@ -56,7 +56,7 @@ public class VotingManager {
             plugin.getScoreboardHandler().teams.get(map).setPrefix(
                     ChatColor.AQUA + "[" + count + "] " + ChatColor.GRAY);
             plugin.getScoreboardHandler().teams.get(map).setSuffix(
-                    ChatColor.RED + " » " + ChatColor.GREEN + "0 Votes");
+                    ChatColor.RED + " » " + ChatColor.GREEN + "0 Votos");
         }
 
         running = true;
@@ -73,7 +73,7 @@ public class VotingManager {
                 for (String map : maps.values()) {
                     if (vote.equalsIgnoreCase(map)) {
                         votes.put(voter.getName(), map);
-                        voter.sendMessage(ChatColor.GOLD + "You voted for "
+                        voter.sendMessage(ChatColor.GOLD + "Has votado por "
                                 + ChatColor.WHITE + map);
                         updateScoreboard();
                         return true;
@@ -84,7 +84,7 @@ public class VotingManager {
             for (String map : maps.values()) {
                 if (vote.equalsIgnoreCase(map)) {
                     votes.put(voter.getName(), map);
-                    voter.sendMessage(ChatColor.GOLD + "You voted for "
+                    voter.sendMessage(ChatColor.GOLD + "Has votado por "
                             + ChatColor.WHITE + map);
                     updateScoreboard();
                     return true;
@@ -92,7 +92,7 @@ public class VotingManager {
             }
         }
 
-        voter.sendMessage(vote + ChatColor.RED + " is not a valid map");
+        voter.sendMessage(vote + ChatColor.RED + " no es un mapa");
         return false;
     }
 
@@ -133,6 +133,6 @@ public class VotingManager {
         for (String map : maps.values())
             plugin.getScoreboardHandler().teams.get(map).setSuffix(
                     ChatColor.RED + " » " + ChatColor.GREEN + countVotes(map)
-                            + " Vote" + (countVotes(map) == 1 ? "" : "s"));
+                            + " Voto" + (countVotes(map) == 1 ? "" : "s"));
     }
 }
