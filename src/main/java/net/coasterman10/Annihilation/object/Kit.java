@@ -44,12 +44,12 @@ public enum Kit {
             spawnItems.add(new ItemStack(Material.WOOD_PICKAXE));
             spawnItems.add(new ItemStack(Material.WOOD_AXE));
             spawnItems.add(new ItemStack(Material.WORKBENCH));
-            lore.add("You are the backbone.");
+            lore.add("Tu eres la clave.");
             lore.add("");
-            lore.add("Fuel all facets of the");
-            lore.add("war machine with your");
-            lore.add("set of wooden tools and");
-            lore.add("prepare for battle!");
+            lore.add("Proporciona todo lo");
+            lore.add("necesario para tu equipo");
+            lore.add("con este kit y preparaos");
+            lore.add("para la batalla!")
         }
     },
     WARRIOR(Material.STONE_SWORD) {
@@ -60,16 +60,16 @@ public enum Kit {
             spawnItems.add(new Potion(PotionType.INSTANT_HEAL, 1)
                     .toItemStack(1));
             spawnItems.get(0).addEnchantment(Enchantment.KNOCKBACK, 1);
-            lore.add("You are the sword.");
+            lore.add("Eres la espada.");
             lore.add("");
-            lore.add("You deal +1 damage with");
-            lore.add("any melee weapon.");
+            lore.add("Ingliges +1 de daño con");
+            lore.add("cualquier melee.");
             lore.add("");
-            lore.add("Spawn with a knockback");
-            lore.add("sword and a health potion");
-            lore.add("which enable you to move");
-            lore.add("immediately on the enemy");
-            lore.add("and attack!");
+            lore.add("Aparece con una espada");
+            lore.add("con Empuje y pocion de vida");
+            lore.add("que te permitira avanzar");
+            lore.add("inmediatamente hacia el enemigo");
+            lore.add("y atacar!");
         }
     },
     ARCHER(Material.BOW) {
@@ -83,15 +83,15 @@ public enum Kit {
                     .toItemStack(1));
             spawnItems.add(new ItemStack(Material.ARROW, 16));
             spawnItems.get(1).addEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
-            lore.add("You are the rain.");
+            lore.add("Eres la lluvia.");
             lore.add("");
-            lore.add("You deal +1 damage with");
-            lore.add("a bow and can craft arrows");
-            lore.add("without feathers.");
+            lore.add("Infliges +1 de daño con");
+            lore.add("un arco y puedes craftear");
+            lore.add("lanzas sin plumas.");
             lore.add("");
-            lore.add("Place flint on top of sticks");
-            lore.add("in your crafting interface");
-            lore.add("to create 3 arrows!");
+            lore.add("Pon flint encima de los palos");
+            lore.add("a la hora de craftear");
+            lore.add("para crear 3 lanzas!");
         }
     },
 
@@ -103,13 +103,13 @@ public enum Kit {
             spawnItems.add(new ItemStack(Material.FURNACE));
             spawnItems.add(new ItemStack(Material.COAL, 4));
             spawnItems.get(1).addEnchantment(Enchantment.DIG_SPEED, 1);
-            lore.add("You are the hands.");
+            lore.add("Eres el oro.");
             lore.add("");
-            lore.add("Spawn with an efficiency");
-            lore.add("stone pickaxe and mine");
-            lore.add(")precious resources for");
-            lore.add("your team more quickly with");
-            lore.add("your doubled ore drops!");
+            lore.add("Aparece con un pico de piedra");
+            lore.add("con eficiencia y mina una");
+            lore.add(")gran cantidad de recursos para");
+            lore.add("tu equipo con el bonus de dropeos");
+            lore.add("duplicados de minerales!");
         }
     },
     LUMBERJACK(Material.STONE_AXE) {
@@ -118,13 +118,13 @@ public enum Kit {
             spawnItems.add(new ItemStack(Material.WOOD_PICKAXE));
             spawnItems.add(new ItemStack(Material.STONE_AXE));
             spawnItems.get(2).addEnchantment(Enchantment.DIG_SPEED, 1);
-            lore.add("You are the wedge.");
+            lore.add("Eres la madera.");
             lore.add("");
-            lore.add("Spawn with an efficiency");
-            lore.add("stone axe and use your");
-            lore.add("doubled log drops to obtain");
-            lore.add("large amounts of wood for");
-            lore.add("your team's builders!");
+            lore.add("Aparece con un hacha de");
+            lore.add("piedra con eficiencia y aprovecha");
+            lore.add("el duplicado de deopeos para abastecer");
+            lore.add("a tu equipo con grandes cantidades");
+            lore.add("de madera!");
         }
     },
     SCOUT(Material.FISHING_ROD) {
@@ -136,18 +136,18 @@ public enum Kit {
             ItemMeta meta = spawnItems.get(1).getItemMeta();
             meta.setDisplayName("Grapple");
             spawnItems.get(1).setItemMeta(meta);
-            lore.add("You are the feet.");
+            lore.add("Eres el veloz.");
             lore.add("");
-            lore.add("Use your permanent speed");
-            lore.add("boost to maneuver around");
-            lore.add("the battlefield and your");
-            lore.add("grapple to climb obstacles");
-            lore.add("and enemy defenses!");
+            lore.add("Usa tu bonus de velocidad");
+            lore.add("permanente para moverte con");
+            lore.add("rapidez, entrar en bases enemigas");
+            lore.add("y saltar obstaculos y objetos");
+            lore.add("de defensa enemiga!");
             lore.add("");
-            lore.add("You can only wear light");
-            lore.add("armor; anything heavier");
-            lore.add("than chainmail will slow");
-            lore.add("you down.");
+            lore.add("Solo puedes llevar armadura");
+            lore.add("ligera, algo mas pesado que");
+            lore.add("la armadura de cadenas te hara");
+            lore.add("ser mas lento.");
         }
     },
     BERSERKER(Material.CHAINMAIL_CHESTPLATE) {
@@ -157,13 +157,13 @@ public enum Kit {
             spawnItems.add(new ItemStack(Material.WOOD_AXE));
             spawnItems.add(new Potion(PotionType.INSTANT_HEAL, 1)
                     .toItemStack(1));
-            lore.add("You are the tank.");
+            lore.add("Eres el tanque.");
             lore.add("");
-            lore.add("Start each life with only");
-            lore.add("7 hearts. For every enemy");
-            lore.add("kill, you garner yourself");
-            lore.add("an extra heart, allowing");
-            lore.add("you to gain up to 15 hearts!");
+            lore.add("Aparece con solo 7 corazones");
+            lore.add("Por cada enemigo que mates");
+            lore.add("obtendras un corazon mas,");
+            lore.add("permitiendote ganar hasta");
+            lore.add("15 corazones!");
         }
     },
     OPERATIVE(Material.SOUL_SAND) {
@@ -173,19 +173,19 @@ public enum Kit {
             spawnItems.add(new ItemStack(Material.WOOD_AXE));
             spawnItems.add(new ItemStack(Material.SOUL_SAND));
             ItemMeta meta = spawnItems.get(3).getItemMeta();
-            meta.setDisplayName(ChatColor.AQUA + "Return Point");
+            meta.setDisplayName(ChatColor.AQUA + "Punto de Regreso");
             spawnItems.get(3).setItemMeta(meta);
-            lore.add("You are the <something>");
+            lore.add("Eres el <something>");
             lore.add("");
-            lore.add("Carry out your plans for");
-            lore.add("offense and safely escape!");
+            lore.add("Lleva a cabo tus objetivos");
+            lore.add("de ofensa y escapa facilmente!");
             lore.add("");
-            lore.add("You spawn with a block of");
-            lore.add("soulsand, which when placed");
-            lore.add("will set a return point. In");
-            lore.add("90 seconds, you will be");
-            lore.add("teleported back. Make sure");
-            lore.add("to place it safe from enemies!");
+            lore.add("Apareceras con un bloque de");
+            lore.add("soulsand, que cuando lo pones");
+            lore.add("establecera el punto de vuelta.");
+            lore.add("90 segundos despues seras llevado");
+            lore.add("a ese lugar. Asegurate de ponerlo");
+            lore.add("en un lugar seguro!");
         }
     };
 
