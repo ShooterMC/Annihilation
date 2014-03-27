@@ -81,12 +81,12 @@ public class SignManager {
             Material m = b.getType();
             if (m == Material.SIGN_POST || m == Material.WALL_SIGN) {
                 Sign s = (Sign) b.getState();
-                s.setLine(0, ChatColor.DARK_PURPLE + "[Team]");
+                s.setLine(0, ChatColor.DARK_PURPLE + "[Equipo]");
                 s.setLine(1, t.coloredName());
                 s.setLine(2, ChatColor.UNDERLINE.toString() + t.getPlayers().size()
-                        + (t.getPlayers().size() == 1 ? " Player" : " Players"));
+                        + (t.getPlayers().size() == 1 ? " Jugador" : " Jugadores"));
                 if (t.getNexus() != null && plugin.getPhase() > 0)
-                    s.setLine(3, ChatColor.BOLD.toString() + "Nexus: "
+                    s.setLine(3, ChatColor.BOLD.toString() + "Nexo: "
                             + t.getNexus().getHealth());
                 else
                     s.setLine(3, " ");
