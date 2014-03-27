@@ -51,10 +51,10 @@ public class ChatUtil {
             group = DARK_GRAY + "[" + DARK_PURPLE + "Lobby" + DARK_GRAY + "]";
             username = RESET + sender.getName();
         } else {
-            group = DARK_GRAY + "[" + team.color() + "All" + DARK_GRAY + "]";
+            group = DARK_GRAY + "[" + team.color() + "Global" + DARK_GRAY + "]";
             username = team.color() + sender.getName();
             if (dead) {
-                group = DARK_GRAY + "[" + DARK_RED + "DEAD" + DARK_GRAY + "] "
+                group = DARK_GRAY + "[" + DARK_RED + "MUERTO" + DARK_GRAY + "] "
                         + group;
             }
         }
@@ -74,9 +74,9 @@ public class ChatUtil {
             allMessage(team, sender, message, false);
             return;
         } else {
-            group = GRAY + "[" + team.color() + "Team" + GRAY + "]";
+            group = GRAY + "[" + team.color() + "Equipo" + GRAY + "]";
             if (dead) {
-                group = DARK_GRAY + "[" + DARK_RED + "DEAD" + DARK_GRAY + "] " + group;
+                group = DARK_GRAY + "[" + DARK_RED + "MUERTO" + DARK_GRAY + "] " + group;
             }
         }
         String permGroup = VaultHooks.getGroup(sender.getName());
@@ -95,17 +95,17 @@ public class ChatUtil {
     public static void nexusDestroyed(GameTeam attacker, GameTeam victim,
             Player p) {
         broadcast(GRAY + "===============[ " + victim.color().toString()
-                + "Nexus Destroyed" + GRAY + " ]===============");
+                + "Nexo Destruido" + GRAY + " ]===============");
         broadcast(attacker.color().toString() + p.getName() + GRAY + " from "
-                + attacker.coloredName() + GRAY + " destroyed "
-                + victim.coloredName() + "'s" + GRAY + " Nexus!");
+                + attacker.coloredName() + GRAY + " ha destruido el nexo del equipo "
+                + victim.coloredName());
         broadcast(GRAY + "===============================================");
     }
 
     public static String nexusBreakMessage(Player breaker, GameTeam attacker,
             GameTeam victim) {
-        return colorizeName(breaker, attacker) + GRAY + " has damaged the "
-                + victim.coloredName() + " team's Nexus!";
+        return colorizeName(breaker, attacker) + GRAY + " ha dañado el Nexo del equipo "
+                + victim.coloredName();
     }
 
     private static String colorizeName(Player player, GameTeam team) {
@@ -113,41 +113,41 @@ public class ChatUtil {
     }
 
     public static void phaseMessage(int phase) {
-        broadcast(GRAY + "===========[ " + DARK_AQUA + "Progress" + GRAY
+        broadcast(GRAY + "===========[ " + DARK_AQUA + "Progreso" + GRAY
                 + " ]===========");
-        broadcast(Util.getPhaseColor(phase) + "Phase " + translateRoman(phase) + GRAY + " has started");
+        broadcast(Util.getPhaseColor(phase) + "La Fase " + translateRoman(phase) + GRAY + " ha comenzado");
         switch (phase) {
         case 1:
-            broadcast(GRAY + "Each nexus is invincible until Phase "
+            broadcast(GRAY + "Los Nexos son indestructibles hasta la fase "
                     + translateRoman(2));
             break;
         case 2:
-            broadcast(GRAY + "Each nexus is no longer invincible");
-            broadcast(GRAY + "Boss Iron Golems will now spawn");
+            broadcast(GRAY + "Los Nexos ya no son indestructibles");
+            broadcast(GRAY + "Los Boss Iron Golems apareceran ahora");
             break;
         case 3:
-            broadcast(GRAY + "Diamonds will now spawn in the middle");
+            broadcast(GRAY + "Los diamantes apareceran ahora en el medio");
             break;
         case 4:
             break;
         case 5:
-            broadcast(RED + "Double nexus damage");
+            broadcast(RED + "Daño a los Nexos x2");
         }
         broadcast(GRAY + "================================");
     }
 
     public static void winMessage(GameTeam winner) {
         broadcast(GRAY + "================[ " + winner.color().toString()
-                + "End Game" + GRAY + " ]================");
-        broadcast(GRAY + "Team " + winner.coloredName() + GRAY
-                + " Wins Annihilation! Restarting game...");
+                + "Partida terminada" + GRAY + " ]================");
+        broadcast(GRAY + "El equipo " + winner.coloredName() + GRAY
+                + " Ha ganado la partida! Reiniciando partida...");
         broadcast(GRAY + "==========================================");
     }
 
     public static void bossDeath(Boss b, Player killer, GameTeam team) {
-        broadcast(GRAY + "==========[ " + DARK_AQUA + "Boss Killed" + GRAY
+        broadcast(GRAY + "==========[ " + DARK_AQUA + "Boss Matado" + GRAY
                 + " ]==========");
-        broadcast(GRAY + b.getBossName() + GRAY + " was killed by "
+        broadcast(GRAY + b.getBossName() + GRAY + " ha sido matado por "
                 + colorizeName(killer, team));
         broadcast(GRAY + "================================");
     }
@@ -156,7 +156,7 @@ public class ChatUtil {
         broadcast(GRAY + "================[ " + DARK_AQUA + "Boss" + GRAY
                 + " ]================");
         broadcast(GRAY + b.getBossName() + GRAY
-                + " has respawned! Go slay the beast!");
+                + " ha aparecido! Ve a matarlo!");
         broadcast(GRAY + "=======================================");
     }
 
@@ -187,7 +187,7 @@ public class ChatUtil {
             message = arr[0];
         }
 
-        return message.replace("was slain by", "was killed by");
+        return message.replace("ha sido matado por", "ha muerto a manos de");
     }
 
     public static String translateRoman(int number) {
