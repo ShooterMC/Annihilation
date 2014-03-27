@@ -41,26 +41,26 @@ public class AnnihilationCommand implements CommandExecutor {
         String yellow = ChatColor.YELLOW.toString();
         String dgray = ChatColor.DARK_GRAY.toString();
         String green = ChatColor.GREEN.toString();
-        String prefix = cyan + "[Annihilation] " + gray;
+        String prefix = cyan + "[HighLand] " + gray;
         
         if (args.length == 0) {
-            sender.sendMessage(prefix + white + "Annihilation v" + plugin.getDescription().getVersion() + " by coasterman10 & stuntguy3000.");
-            sender.sendMessage(prefix + gold + "Download Annihilation at");
-            sender.sendMessage(prefix + yellow + "http://dev.bukkit.org/bukkit-plugins/anni/");
-            sender.sendMessage(prefix + gray + "Command Help:");
-            sender.sendMessage(prefix + gray + "/anni " + dgray + "-" + white + " Show plugin information.");
-            sender.sendMessage(prefix + gray + "/anni start " + dgray + "-" + white + " Begin the game.");
+            sender.sendMessage(prefix + white + "Destruye el Nexo");
+            sender.sendMessage(prefix + gold + "Visita nuestra web en");
+            sender.sendMessage(prefix + yellow + "http://www.highland-server.com");
+            sender.sendMessage(prefix + gray + "Ayuda:");
+            sender.sendMessage(prefix + gray + "/anni " + dgray + "-" + white + " Informacion.");
+            sender.sendMessage(prefix + gray + "/anni start " + dgray + "-" + white + " Inicia la partida.");
         }
         
         if (args.length == 1) {
             if (args[0].equalsIgnoreCase("start")) {
                 if (sender.hasPermission("annihilation.command.start")) {
                     if (!plugin.startTimer()) {
-                        sender.sendMessage(prefix + red + "The game has already started");
+                        sender.sendMessage(prefix + red + "La partida ya ha empezado");
                     } else {
-                        sender.sendMessage(prefix + green + "The game has been started.");
+                        sender.sendMessage(prefix + green + "La partida ha sido empezado.");
                     }
-                } else sender.sendMessage(prefix + red + "You cannot use this command!");
+                } else sender.sendMessage(prefix + red + "No puedes usar ese comando!");
             }
         }
         return false;
