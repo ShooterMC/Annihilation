@@ -263,9 +263,9 @@ public class Util {
             List<String> lore = im.getLore();
             lore.add(ChatColor.GRAY + "---------------");
             if (kit.isOwnedBy(p)) {
-                lore.add(ChatColor.GREEN + "Unlocked");
+                lore.add(ChatColor.GREEN + "Desbloqueado");
             } else {
-                lore.add(ChatColor.RED + "Locked");
+                lore.add(ChatColor.RED + "Bloqueado");
             }
             im.setLore(lore);
             i.setItemMeta(im);
